@@ -14,12 +14,17 @@ def a(image):
 				image[row,col,co]=255-pv
 	cv2.imshow("iii",image)
 
+def creat_image():
+	img=np.zeros([400,400,3],np.uint8)
+	img[:,:,0]=np.ones([400,400])*255
+        cv2.imshow("new image",img)
 
 scr = cv2.imread("/home/jetbot/Desktop/text/timg.jpeg",1) 
 cv2.namedWindow("Image")   
 cv2.imshow("Image", scr)
 #t1=cv2.gitTickCount()
 a(scr)
+creat_image()
 #t2=cv2.gitTickCount()
 #t=((t2-t1)/cv.gitTickFrequency())*1000
 #print(t)
