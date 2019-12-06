@@ -1,0 +1,28 @@
+#numpy shu,zu,cao,zuo
+#xiao'guo hei,bai,dian,dao......
+import cv2   
+import numpy as np
+
+def a(image):
+	hight=image.shape[0]
+	width=image.shape[1]
+	c=image.shape[2]
+	for row in range(hight):
+		for col in range(width):
+			for co in range(c):
+				pv=image[row,col,co]
+				image[row,col,co]=255-pv
+	cv2.imshow("iii",image)
+
+
+scr = cv2.imread("/home/jetbot/Desktop/text/timg.jpeg",1) 
+cv2.namedWindow("Image")   
+cv2.imshow("Image", scr)
+#t1=cv2.gitTickCount()
+a(scr)
+#t2=cv2.gitTickCount()
+#t=((t2-t1)/cv.gitTickFrequency())*1000
+#print(t)
+k=cv2.waitKey(0)
+if k==27:
+	cv2.destroyAllWindows()
