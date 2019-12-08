@@ -1,0 +1,26 @@
+import cv2   
+import numpy as np
+from matplotlib import pyplot as plt
+'''
+img = cv2.imread("/home/jetbot/Desktop/text/timg.jpeg",1)   
+#(1 or don't write)  color  (0 or else number) no color
+#cv2.namedWindow("Image")   
+font=cv2.FONT_HERSHEY_SIMPLEX
+cv2.putText(img,'opencv',(80,80),font,4,(255,0,0),6)
+#tupian string zuobiao ziti zideda/xiao color cu/xi
+cv2.imshow("Image", img)
+k=cv2.waitKey(0)
+if k==27:
+	cv2.destroyAllWindows()
+
+'''
+img = cv2.imread("/home/jetbot/Desktop/text/timg.jpeg",1) 
+#img[100,100]=img[255,255,0]
+print(img.shape)
+print(img.size)
+print(img.dtype)
+px=img[100,100,0]
+cv2.imshow("Image",px)
+k=cv2.waitKey(0)
+if k==27:
+	cv2.destroyAllWindows()
