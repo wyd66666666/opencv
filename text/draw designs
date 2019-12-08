@@ -1,19 +1,34 @@
+'''
+在黑屏上画小蓝点
+'''
 import cv2
 import numpy as np
+
+#输出触发事件种类
 '''
 events=[i for i in dir(cv2) if 'EVENT'in i]
 print events
 '''
-def graw_circle(event,x,y,flags,param):
-	if event==cv2.EVENT_LBUTTONDOWN:
-		cv2.circle(img,(x,y),1,(255,0,0),-1)
 
-img=np.ones((255,255,3),np.uint8)
+
+def graw_circle(event,x,y,flags,param):
+	#此触发事件为单击鼠标
+	if event==cv2.EVENT_LBUTTONDOWN:
+		#在创建的图上画一个圆心为（x,y）半径为1的圆，颜色为蓝色，实心
+		cv2.circle(img,(x,y),1,(255,0,0),-1)  
+
+#创建一个长255，宽255，有三个通道的画（255*255黑屏）
+img=np.ones((255,255,3),np.uint8)    
+#窗口的名字叫image
 cv2.namedWindow('image')
+#触发事件回调函数作用在image上
 cv2.setMouseCallback('image',graw_circle)
 
 while(1):
+	#显示图片，图片img，窗口名称image
 	cv2.imshow('image',img)
+	#如果按下esc键，窗口关闭
 	if cv2.waitKey(20)&0xFF==27:
 		break
+#关闭所有窗口
 cv2.destroyAllWindows()
