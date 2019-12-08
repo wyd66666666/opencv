@@ -1,7 +1,12 @@
+'''
+矩阵的简单操作
+'''
 import numpy as np
 from numpy import newaxis
+#创建矩阵
 a=np.array([[0,1,2],[1,0,3],[4,-3,8]])
 print(a)
+#逆矩阵
 a_inv=np.linalg.inv(a)
 print(a_inv)
 print(a*a_inv)
