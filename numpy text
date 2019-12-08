@@ -1,5 +1,5 @@
-#numpy shu,zu,cao,zuo
-#xiao'guo hei,bai,dian,dao......
+#numpy 数组操作
+#效果是：图像颜色颠倒（白->黑 红->蓝）
 import cv2   
 import numpy as np
 
@@ -29,5 +29,6 @@ creat_image()
 #t=((t2-t1)/cv.gitTickFrequency())*1000
 #print(t)
 k=cv2.waitKey(0)
+#按esc退出
 if k==27:
 	cv2.destroyAllWindows()
