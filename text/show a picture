@@ -4,10 +4,11 @@ from matplotlib import pyplot as plt
 '''
 img = cv2.imread("/home/jetbot/Desktop/text/timg.jpeg",1)   
 #(1 or don't write)  color  (0 or else number) no color
-#cv2.namedWindow("Image")   
+#cv2.namedWindow("Image")
+#字体
 font=cv2.FONT_HERSHEY_SIMPLEX
 cv2.putText(img,'opencv',(80,80),font,4,(255,0,0),6)
-#tupian string zuobiao ziti zideda/xiao color cu/xi
+#图片 要显示的字 坐标 字体 字的大小 颜色 字笔画的粗细
 cv2.imshow("Image", img)
 k=cv2.waitKey(0)
 if k==27:
@@ -15,12 +16,12 @@ if k==27:
 
 '''
 img = cv2.imread("/home/jetbot/Desktop/text/timg.jpeg",1) 
-#img[100,100]=img[255,255,0]
+#图片的形状
 print(img.shape)
+#图片的大小和通道数
 print(img.size)
+组成图片字符的类型
 print(img.dtype)
-px=img[100,100,0]
-cv2.imshow("Image",px)
 k=cv2.waitKey(0)
 if k==27:
 	cv2.destroyAllWindows()
