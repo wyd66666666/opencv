@@ -1,31 +1,51 @@
+'''
+窗口1展示彩色散点图
+'''
 import matplotlib.pyplot as plt
 import numpy as np
+
+#在-10到300之间取5000个数
 x = np.linspace(-10,300,5000)
 y1 = x**2 
 y2 = x*2
 
+#显示新窗口
 plt.figure()
 n = 1024
+#在0-1之间随机生成1024个数
 X = np.random.normal(0,1,n)
 Y = np.random.normal(0,1,n)
+#arctan为数学符号
 T = np.arctan2(Y,X)#for color later on
+#画散点图函数
+#c 颜色 
 plt.scatter(X,Y,s = 75,c = T,alpha = .5)
+#横坐标距离-1.5-1.5
 plt.xlim((-1.5,1.5))
+#可忽视
 plt.xticks([])#ignore xticks
 plt.ylim((-1.5,1.5))
 plt.yticks([])
 
 plt.figure(num = 3,figsize = (5,5))
-plt.plot(x,y2,color='red',linewidth=3,linestyle='--',label='line one')
+#生成一条线
+plt.plot(x,y2,color='red',linewidth=3,linestyle='--',label='line one')   
 plt.plot(x,y1,color="b",linewidth=3,label='line two')
 plt.xlim((0,500))
 plt.ylim((0,500))
+#x,y轴名称
 plt.xlabel("x zhou")
 plt.ylabel("y zhou")
+#y轴上显示的[0,20,40,60,80]被改为['really bad','b','c','d','good']
 plt.yticks([0,20,40,60,80],['really bad','b','c','d','good'])
+#给图像加上图例
 plt.legend()
+#画图
 ax=plt.gca()
+#修改边框
 ax.spines['bottom'].set_visible(False)
 ax.spines['top'].set_color('red')
+#添加辅助线
 ax.grid(color='r', linestyle='--', linewidth=1,alpha=0.3)
+#显示图像
 plt.show()
